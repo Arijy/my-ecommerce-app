@@ -12,7 +12,8 @@
     height: 42px ;
     line-height: 42px ;
     font-size:22px ;
-
+    display: inline-block;
+    text-align: center;
 }
 .text-wrap{
     line-height: 1.2;
