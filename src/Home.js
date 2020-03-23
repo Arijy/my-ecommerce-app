@@ -1,7 +1,9 @@
 import React from 'react';
-import Header from './Component/Header';
-import Body from './Component/Body';
-import Footer from './Component/Footer';
+import Navbar from './Components/Navbar';
+import Body from './Components/Body';
+import Footer from './Components/Footer';
+import {Link} from "react-router-dom";
+
 
 class Home extends React.Component{
  render() 
@@ -10,9 +12,10 @@ class Home extends React.Component{
         
             <div>
 
-               <Header/>
+               <Navbar/>
                  <Body/>
                  <Footer/>
+                
                  </div>
    
                

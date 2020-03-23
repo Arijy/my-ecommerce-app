@@ -1,6 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import  Home from './Home'
+import {BrowserRouter as Router }from "react-router-dom" ;
+import Routes from "./Routes"
 
-ReactDOM.render(<Home/>,document.getElementById('root'));
+const view=(
+    <Router>
+        <div>
+            <Routes/>
+        </div>
+    </Router>
+)
+
+
+ReactDOM.render(view ,document.getElementById('root'));
 
