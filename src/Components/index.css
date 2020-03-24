@@ -19,3 +19,7 @@
     padding: 10px;
     color:black ;
 }
+.list-unstyled > li > a {
+    text-decoration: none;
+    font-size: 18px ;
+}
