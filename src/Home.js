@@ -12,24 +12,14 @@ import paymentIcon from "./homeAssets/payment.png";
 import returnIcon from "./homeAssets/return.png";
 import trustIcon from "./homeAssets/trust.png";
 import HomeItem from "./homeItem";
-import axios from 'axios'
+import  AppContext from "./AppContext";
+
+
+
+
 class Home extends React.Component {
-  constructor(props){
-     super(props)
-     this.state = {
-       animals:[]
-     }
-  }
-  componentDidMount(){
-         let self = this;
-         axios.get('http//:localhost:4000/animals')
-         .then((response) =>{
-          self.setState(
-             {
-           animals:response.data
-             } )
-         } )
-  }
+ 
+ 
     render() {
     return (
       <div>
@@ -110,18 +100,16 @@ class Home extends React.Component {
                      </div>
                      </section>
                     <section className = "third-section">
+                      <div className="container">
+                        <h4 className="mb-3">Popular Products</h4>
                       <div className= "row">
 
-                        {
-                          this.state.animals.map((animal,index) => 
-                          <div className="p-5">
-                            <h1>{animal.name}</h1>
-                            <h3>{animal.color}</h3>
-                          </div>)
+                      {
+                        this.context.products.map((product,index) => 
+                        <HomeItem product={product} key={index}/>
+                        )
                         }
-                      <HomeItem name='Goat' color='Red'/>
-                      <HomeItem name='Dog' color ='Black'/>
-                      <HomeItem name='Cat' color='White'/>
+                      </div>
                       </div>
                     </section>
                     
@@ -132,4 +120,5 @@ class Home extends React.Component {
     )
   }
 }
+Home.contextType =AppContext;
 export default Home;
