@@ -11,9 +11,26 @@ import slide3 from "./homeAssets/slide3.jpg";
 import paymentIcon from "./homeAssets/payment.png";
 import returnIcon from "./homeAssets/return.png";
 import trustIcon from "./homeAssets/trust.png";
-
+import HomeItem from "./homeItem";
+import axios from 'axios'
 class Home extends React.Component {
-  render() {
+  constructor(props){
+     super(props)
+     this.state = {
+       animals:[]
+     }
+  }
+  componentDidMount(){
+         let self = this;
+         axios.get('http//:localhost:4000/animals')
+         .then((response) =>{
+          self.setState(
+             {
+           animals:response.data
+             } )
+         } )
+  }
+    render() {
     return (
       <div>
         <Navbar />
@@ -59,7 +76,7 @@ class Home extends React.Component {
             </div>
                    </div>
                      </section>
-                     <section className="second-section my-5 py-5 bg-white">
+                     <section className="second-section my-5 py-5 bg-white">      
                      <div className="container">
                        <div className="row">
                          <div className="col-sm-4">
@@ -92,11 +109,27 @@ class Home extends React.Component {
                        </div>
                      </div>
                      </section>
-    
+                    <section className = "third-section">
+                      <div className= "row">
+
+                        {
+                          this.state.animals.map((animal,index) => 
+                          <div className="p-5">
+                            <h1>{animal.name}</h1>
+                            <h3>{animal.color}</h3>
+                          </div>)
+                        }
+                      <HomeItem name='Goat' color='Red'/>
+                      <HomeItem name='Dog' color ='Black'/>
+                      <HomeItem name='Cat' color='White'/>
+                      </div>
+                    </section>
+                    
+
         {/* <Body /> */}
         <Footer />
       </div>
-    );
+    )
   }
 }
 export default Home;

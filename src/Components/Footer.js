@@ -58,7 +58,7 @@ class Footer extends React.Component{
                     <div className="row">
                         <div className="col-sm-12">
                             <p className="text-white text-centre">
-                                 All right reserved to:
+                                 All right reserved to@
                                 <Link to="/">
                                     My-ecommerce-app
                                 </Link>
