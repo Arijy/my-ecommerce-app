@@ -1,31 +1,44 @@
- 
 import React from "react";
+ 
  
 import Navbar from "./Components/Navbar";
  
+ 
 // import Body from "./Components/Body";
+ 
  
 import Footer from "./Components/Footer";
  
+ 
 import Sidebar from "./Components/Sidebar";
  
-// import { Link } from "react-router-dom";
+ 
+import { Links } from "react-router-dom";
+ 
  
 import "./homeAssets/home.css";
  
+ 
 import slide1 from "./homeAssets/slide1.jpg";
+ 
  
 import slide2 from "./homeAssets/slide2.jpg";
  
+ 
 import slide3 from "./homeAssets/slide3.jpg";
+ 
  
 import paymentIcon from "./homeAssets/payment.png";
  
+ 
 import returnIcon from "./homeAssets/return.png";
+ 
  
 import trustIcon from "./homeAssets/trust.png";
  
+ 
 import HomeItem from "./homeItem";
+ 
  
 import AppContext from "./AppContext";
  
@@ -40,6 +53,7 @@ class Home extends React.Component {
  
         <Navbar />
  
+ 
         <section className="first-section">
  
           <div className="container">
@@ -51,6 +65,7 @@ class Home extends React.Component {
                 <Sidebar />
  
               </div>
+ 
  
               <div className="col-sm-8">
  
@@ -78,6 +93,7 @@ class Home extends React.Component {
  
                       />
  
+ 
                       <li
  
                         data-target="#carouselExampleIndicators"
@@ -85,6 +101,7 @@ class Home extends React.Component {
                         data-slide-to={1}
  
                       />
+ 
  
                       <li
  
@@ -96,6 +113,7 @@ class Home extends React.Component {
  
                     </ol>
  
+ 
                     <div className="carousel-inner">
  
                       <div className="carousel-item active">
@@ -104,11 +122,13 @@ class Home extends React.Component {
  
                       </div>
  
+ 
                       <div className="carousel-item">
  
                         <img src={slide2} className="d-block w-100" alt="..." />
  
                       </div>
+ 
  
                       <div className="carousel-item">
  
@@ -117,6 +137,7 @@ class Home extends React.Component {
                       </div>
  
                     </div>
+ 
  
                     <a
  
@@ -138,9 +159,11 @@ class Home extends React.Component {
  
                       />
  
+ 
                       <span className="sr-only">Previous</span>
  
                     </a>
+ 
  
                     <a
  
@@ -162,6 +185,7 @@ class Home extends React.Component {
  
                       />
  
+ 
                       <span className="sr-only">Next</span>
  
                     </a>
@@ -178,6 +202,7 @@ class Home extends React.Component {
  
         </section>
  
+ 
         <section className="second-section my-5 py-5 bg-white">
  
           <div className="container">
@@ -190,9 +215,11 @@ class Home extends React.Component {
  
                   <img className="mb-3" src={paymentIcon} alt="paymentIcon" />
  
+ 
                   <div className="">
  
                     <h4>Easy Payment</h4>
+ 
  
                     <p>
  
@@ -208,15 +235,18 @@ class Home extends React.Component {
  
               </div>
  
+ 
               <div className="col-sm-4">
  
                 <div className="text-centre">
  
                   <img className="mb-3" src={returnIcon} alt="returnIcon" />
  
+ 
                   <div className="">
  
                     <h4>Easy Return</h4>
+ 
  
                     <p>
  
@@ -232,15 +262,18 @@ class Home extends React.Component {
  
               </div>
  
+ 
               <div className="col-sm-4">
  
                 <div className="text-centre">
  
                   <img className="mb-3" src={trustIcon} alt="trustIcon" />
  
+ 
                   <div className="">
  
                     <h4>Trusted Quality</h4>
+ 
  
                     <p>
  
@@ -262,11 +295,13 @@ class Home extends React.Component {
  
         </section>
  
+ 
         <section className="third-section">
  
           <div className="container">
  
             <h4 className="mb-3">Popular Products</h4>
+ 
  
             <div className="row">
  
@@ -285,6 +320,7 @@ class Home extends React.Component {
  
         {/* <Body /> */}
  
+ 
         <Footer />
  
       </div>
@@ -295,8 +331,9 @@ class Home extends React.Component {
  
 }
  
+ 
 Home.contextType = AppContext;
+ 
  
 export default Home;
  
-

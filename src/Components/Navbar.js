@@ -1,8 +1,8 @@
 import React from "react";
 import Logo from "./Logo.png";
 import "./index.css";
-import AppContext from "../AppContext"
-import {Link} from "react-router-dom"
+import {Link} from 'react-router-dom'
+import AppContext from "../AppContext";
 class Navbar extends React.Component {
   render() {
     return (
@@ -32,7 +32,8 @@ class Navbar extends React.Component {
                 >
                   <div className="col-xs-4">
                     <div className="dropdown">
-                      <Link to="/"
+                      < Link
+                        to="/"
                         className="headertext"
                         data-toggle="dropdown"
                         data-offset="20,10"
@@ -83,20 +84,20 @@ class Navbar extends React.Component {
                     </div>
                   </div>
                   <div className="col-xs-4">
-                    <Link to="/" className="headertext">
+                    <Link to="/cart" className="headertext">
                       <div className="d-inline-flex">
                         <div className="icon-wrap">
                           <i className="header-icon fas fa-shopping-cart" />
                         </div>
                         <div className="text-wrap">
-    <span className="small round badge badge-secondary">{this.context.cart.length}</span>
+                          <span className="small round badge badge-secondary">{this.context.cart.length} </span>
                           <div>Cart</div>
                         </div>
                       </div>
                     </Link>
                   </div>
                   <div className="col-xs-4">
-                    <Link to="wishlist" className="headertext">
+                    <Link to="/wishlist" className="headertext">
                       <div className="d-inline-flex">
                         <div className="icon-wrap">
                           <i className="header-icon fas fa-heart" />
@@ -119,5 +120,5 @@ class Navbar extends React.Component {
     );
   }
 }
-Navbar.contextType= AppContext;
+Navbar.contextType=AppContext;
 export default Navbar;
