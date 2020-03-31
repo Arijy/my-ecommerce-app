@@ -7,10 +7,14 @@ import Home from "./Home";
  
 import AppContext from "./AppContext";
  
-import { getProducts } from "./repo";
+import { getProducts, getFashions , getHouseholds ,getPhones,getComputers,getElectronics} from "./repo";
  
 import Cart from "./Pages/Cart";
- 
+import Fashions from "./Pages/fashions";
+import Households  from "./Pages/households";
+import Phones from "./Pages/phones";
+import Computers from "./Pages/computers";
+import Electronics from "./Pages/electronics";
 class Routes extends React.Component {
  
   constructor() {
@@ -20,7 +24,12 @@ class Routes extends React.Component {
     this.state = {
  
       products: [],
- 
+      fashions:[],
+      households:[],
+      phones:[],
+      computers:[],
+      electronics:[],
+      
  
       cart: JSON.parse(localStorage.getItem("cart")) || [],
  
@@ -95,6 +104,31 @@ class Routes extends React.Component {
       this.setState({ products });
  
     });
+    getFashions().then(fashions => {
+ 
+      this.setState({ fashions });
+ 
+    });
+    getHouseholds().then(households => {
+ 
+      this.setState({ households });
+ 
+    });
+    getPhones().then(phones => {
+ 
+      this.setState({ phones});
+ 
+    });
+    getComputers().then(computers => {
+ 
+      this.setState({ computers});
+ 
+    });
+    getElectronics().then(electronics => {
+ 
+      this.setState({ electronics });
+ 
+    });
  
   }
  
@@ -110,6 +144,15 @@ class Routes extends React.Component {
  
           <Route exact path="/cart" component={Cart}></Route>
  
+         <Route exact path="/fashions" component={Fashions}></Route>
+
+         <Route exact path="/household" component={Households}></Route>
+
+         <Route exact path="/phones" component={Phones}></Route>
+
+         <Route exact path="/computers" component={Computers}></Route>
+
+         <Route exact path="/electronics" component={Electronics}></Route>
         </Switch>
  
       </AppContext.Provider>
